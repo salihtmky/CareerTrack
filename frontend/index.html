@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>CareerTrack</h1>
+        <p>Staj ve iş başvurularını takip et.</p>
+    </header>
+
+    <main>
+<main>
+
+    <!-- Dashboard -->
+    <section class="dashboard">
+        <h2>Başvuru Özeti</h2>
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+                <h3>Toplam</h3>
+                <p id="totalApplications">0</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Başvuruldu</h3>
+                <p id="appliedApplications">0</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Mülakat</h3>
+                <p id="interviewApplications">0</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Kabul</h3>
+                <p id="acceptedApplications">0</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Reddedildi</h3>
+                <p id="rejectedApplications">0</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Yeni başvuru formu -->
+    <section>
+        <h2>Yeni Başvuru Ekle</h2>
+        <!-- Yeni başvuru formu -->
+        <section>
+            <h2>Yeni Başvuru Ekle</h2>
+
+            <form id="applicationForm">
+
+                <input
+                    type="text"
+                    id="companyName"
+                    placeholder="Şirket adı"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="position"
+                    placeholder="Pozisyon"
+                    required
+                >
+
+                <select id="applicationType" required>
+                    <option value="">Başvuru türü seç</option>
+                    <option value="Internship">Staj</option>
+                    <option value="Job">İş</option>
+                </select>
+
+                <select id="status" required>
+                    <option value="Applied">Başvuruldu</option>
+                    <option value="Interview">Mülakat</option>
+                    <option value="Accepted">Kabul</option>
+                    <option value="Rejected">Reddedildi</option>
+                </select>
+
+                <input
+                    type="date"
+                    id="applicationDate"
+                    required
+                >
+
+                <input
+                    type="url"
+                    id="jobUrl"
+                    placeholder="İlan linki"
+                >
+
+                <textarea
+                    id="notes"
+                    placeholder="Notlar"
+                ></textarea>
+
+                <button type="submit">
+                    Başvuruyu Kaydet
+                </button>
+
+            </form>
+        </section>
+
+        <!-- Başvurular -->
+        <section>
+            <h2>Başvurularım</h2>
+            <div class="filters">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Şirket veya pozisyon ara..."
+    >
+
+    <select id="statusFilter">
+        <option value="All">Tüm Durumlar</option>
+        <option value="Applied">Başvuruldu</option>
+        <option value="Interview">Mülakat</option>
+        <option value="Accepted">Kabul</option>
+        <option value="Rejected">Reddedildi</option>
+    </select>
+
+</div>
+
+            <div id="applications">
+                <p>Başvurular yükleniyor...</p>
+            </div>
+        </section>
+<!-- Düzenleme formu -->
+<section id="editSection" style="display: none;">
+    <h2>Başvuruyu Düzenle</h2>
+
+    <form id="editForm">
+
+        <input type="hidden" id="editId">
+
+        <input
+            type="text"
+            id="editPosition"
+            placeholder="Pozisyon"
+            required
+        >
+
+        <select id="editApplicationType" required>
+            <option value="Internship">Staj</option>
+            <option value="Job">İş</option>
+        </select>
+
+        <select id="editStatus" required>
+            <option value="Applied">Başvuruldu</option>
+            <option value="Interview">Mülakat</option>
+            <option value="Accepted">Kabul</option>
+            <option value="Rejected">Reddedildi</option>
+        </select>
+
+        <input
+            type="date"
+            id="editApplicationDate"
+            required
+        >
+
+        <input
+            type="url"
+            id="editJobUrl"
+            placeholder="İlan linki"
+        >
+
+        <textarea
+            id="editNotes"
+            placeholder="Notlar"
+        ></textarea>
+
+        <button type="submit">
+            Değişiklikleri Kaydet
+        </button>
+
+        <button
+            type="button"
+            id="cancelEdit"
+        >
+            İptal
+        </button>
+
+    </form>
+</section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
